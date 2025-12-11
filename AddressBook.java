@@ -32,6 +32,19 @@ public class AddressBook {
 
         contacts.add(new Contact(f, l, a, c, s, z, p, e));
         System.out.println("Contact added successfully.\n");
+        System.out.print("Do you want to add another contact? (yes/no): ");
+//        String choice = sc.nextLine();
+//
+//        if (!choice.equalsIgnoreCase("yes")) {
+//            return;
+//        }
+        String choice=sc.nextLine();
+        if(choice.equalsIgnoreCase("yes"))
+        {
+            AddressBook b = new AddressBook();
+            b.addContact();
+            return;
+        }
     }
     public void editContact() {
 
