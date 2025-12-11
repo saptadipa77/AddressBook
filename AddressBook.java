@@ -7,7 +7,7 @@ public class AddressBook {
     Scanner sc;
 
     public AddressBook() {
-       ArrayList<Contact> contacts = new ArrayList<>();
+        contacts = new ArrayList<Contact>();
         sc = new Scanner(System.in);
     }
 
@@ -32,5 +32,33 @@ public class AddressBook {
 
         contacts.add(new Contact(f, l, a, c, s, z, p, e));
         System.out.println("Contact added successfully.\n");
+    }
+    public void editContact() {
+
+        System.out.print("Enter First Name of contact to edit: ");
+        String name = sc.nextLine();
+
+        for (Contact c : contacts) {
+            if (c.getFirstName().equalsIgnoreCase(name)) {
+
+                System.out.println("Enter new Address: ");
+                String a = sc.nextLine();
+                System.out.println("Enter new City: ");
+                String ci = sc.nextLine();
+                System.out.println("Enter new State: ");
+                String st = sc.nextLine();
+                System.out.println("Enter new ZIP: ");
+                String z = sc.nextLine();
+                System.out.println("Enter new Phone: ");
+                String p = sc.nextLine();
+                System.out.println("Enter new Email: ");
+                String e = sc.nextLine();
+
+                c.updateDetails(a, ci, st, z, p, e);
+                System.out.println("Contact updated successfully.\n");
+                return;
+            }
+        }
+        System.out.println("Contact not found.\n");
     }
 }
